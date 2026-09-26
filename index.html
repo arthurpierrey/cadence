@@ -3,34 +3,90 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cadence - Work in rhythm. Move often.</title>
+<title>Cadence: Focus Timer &amp; App Blocker for iPhone and Mac</title>
+<meta name="description" content="A focus timer with a living woodblock-print tide. Blocks distracting apps and websites during focus and at night, reminds you to stand up, and syncs iPhone and Mac. No subscription.">
+<link rel="canonical" href="https://arthurpierrey.github.io/cadence/">
+<link rel="alternate" hreflang="en" href="https://arthurpierrey.github.io/cadence/">
+<link rel="alternate" hreflang="fr" href="https://arthurpierrey.github.io/cadence/fr/">
+<link rel="alternate" hreflang="x-default" href="https://arthurpierrey.github.io/cadence/">
+<meta name="apple-itunes-app" content="app-id=6788449816">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cadence: Focus Timer &amp; App Blocker for iPhone and Mac">
+<meta property="og:description" content="A focus timer with a living woodblock-print tide. Blocks distracting apps and websites during focus and at night, reminds you to stand up, and syncs iPhone and Mac. No subscription.">
+<meta property="og:url" content="https://arthurpierrey.github.io/cadence/">
+<meta property="og:image" content="https://arthurpierrey.github.io/cadence/img/og.jpg">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#122c44">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Cadence", "operatingSystem": "iOS, iPadOS, macOS", "applicationCategory": "ProductivityApplication", "description": "A focus timer with a living woodblock-print tide. Blocks distracting apps and websites during focus and at night, reminds you to stand up, and syncs iPhone and Mac. No subscription.", "url": "https://arthurpierrey.github.io/cadence/", "downloadUrl": "https://apps.apple.com/app/id6788449816", "image": "https://arthurpierrey.github.io/cadence/img/og.jpg", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "author": {"@type": "Person", "name": "Arthur Pierrey"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I block apps at night on iPhone?", "acceptedAnswer": {"@type": "Answer", "text": "Turn on the curfew in Cadence, set its hours and choose the apps to block. Every night, at the time you set, iOS locks those apps until the morning, even if Cadence is not open."}}, {"@type": "Question", "name": "Is Cadence a Pomodoro timer?", "acceptedAnswer": {"@type": "Answer", "text": "It works like one, with a health twist: thirty minutes of focus, then a short break spent on your feet. The length of the focus is adjustable."}}, {"@type": "Question", "name": "Does it block websites in Chrome, not only Safari?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. During a focus, the websites of the social apps installed on your phone are blocked in every browser on iOS, Chrome included."}}, {"@type": "Question", "name": "Is there a subscription?", "acceptedAnswer": {"@type": "Answer", "text": "No. Cadence is free to download. Blocking is free for three focus sessions; after that, Cadence Premium is a single one-time purchase that covers your iPhone, iPad and Mac."}}, {"@type": "Question", "name": "Does it work on the Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, as a native Mac app from the Mac App Store. It hides the apps you choose during a focus and can cover the whole screen during your curfew."}}]}</script>
 <style>
-  :root { color-scheme: light dark; }
-  body { font-family: Georgia, "Times New Roman", serif;
-         max-width: 680px; margin: 0 auto; padding: 64px 24px; line-height: 1.7;
-         color: #22333b; background: #f7f0e1; }
-  @media (prefers-color-scheme: dark) { body { background: #101e30; color: #efe6cf; } }
-  h1 { font-size: 2.3rem; letter-spacing: .35em; text-transform: uppercase; font-weight: 500; }
-  .tagline { font-size: 1.15rem; opacity: .8; margin-top: -8px; }
-  .seal { display: inline-block; background: #c34f41; color: #f7f0e1; border-radius: 999px;
-          padding: 10px 28px; text-decoration: none; margin-top: 24px; font-size: 1rem; }
-  p { font-size: 1.02rem; }
-  footer { margin-top: 56px; font-size: .85rem; opacity: .6; }
-  footer a { color: inherit; }
+:root{--paper:#f7f0e1;--ink:#22333b;--prussian:#122c44;--seal:#c34f41;--muted:#5b6b73;--card:#efe6cf}
+@media (prefers-color-scheme:dark){:root{--paper:#101e30;--ink:#efe6cf;--muted:#a9b3b8;--card:#172a40}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.65}
+main{max-width:980px;margin:0 auto;padding:48px 20px 24px}
+header.hero{display:grid;gap:28px;align-items:center}
+@media(min-width:760px){header.hero{grid-template-columns:1.2fr .8fr}}
+h1{font-size:2.6rem;letter-spacing:.3em;text-transform:uppercase;font-weight:500;margin:0 0 6px}
+.tag{font-size:1.25rem;margin:0 0 16px}
+.lede{font-size:1.05rem}
+.cta{display:inline-block;background:var(--seal);color:#f7f0e1;border-radius:999px;padding:12px 28px;text-decoration:none;font-size:1.05rem;margin:8px 0}
+.free{font-size:.92rem;color:var(--muted)}
+.hero img{width:100%;max-width:300px;height:auto;border-radius:28px;justify-self:center;box-shadow:0 12px 40px rgba(0,0,0,.25)}
+h2{font-weight:500;font-size:1.5rem;margin:56px 0 16px}
+.feats{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.feat{background:var(--card);border-radius:16px;padding:18px 20px}
+.feat h3{margin:0 0 6px;font-size:1.08rem;font-weight:600}
+.feat p{margin:0;font-size:.97rem}
+.shots{display:flex;gap:16px;overflow-x:auto;padding-bottom:8px}
+.shots img{height:420px;width:auto;border-radius:22px;flex:none}
+.mac img{width:100%;height:auto;border-radius:14px}
+details{border-top:1px solid rgba(127,127,127,.3);padding:12px 0}
+summary{cursor:pointer;font-weight:600}
+footer{max-width:980px;margin:0 auto;padding:32px 20px 56px;font-size:.88rem;color:var(--muted)}
+footer a{color:inherit}
 </style>
 </head>
 <body>
-  <h1>Cadence</h1>
-  <p class="tagline">Work in rhythm. Move often.</p>
-
-  <p>Thirty minutes of deep focus, then three on your feet. Cadence turns your work day into a tide: the sea rises while you dive into focus, and recedes while you surface to move. Above it, a living woodblock-print sky follows your real day: sunrise, clouds and rain from your local weather, the sun setting into the sea, the actual phase of the moon.</p>
-
-  <p>Sitting still is not the problem. Sitting without interruption is. Cadence is built on that science, with sources one tap away.</p>
-
-  <p><span class="seal">Coming to the App Store</span></p>
-
-  <footer>
-    &copy; 2026 Cadence &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="mailto:arthur.pierrey@gmail.com">Contact</a>
-  </footer>
+<main>
+<header class="hero">
+<div>
+<h1>Cadence</h1>
+<p class="tag">Focus timer and app blocker for iPhone, iPad and Mac.</p>
+<p class="lede">Thirty minutes of deep work, then three on your feet. The sea rises while you focus and recedes while you move, under a living woodblock-print sky that follows your real day and your local weather.</p>
+<a class="cta" href="https://apps.apple.com/app/id6788449816">Download on the App Store</a>
+<p class="free">Free download. Blocking is free for three focus sessions, then one purchase unlocks it for good on all your devices. No subscription.</p>
+</div>
+<img src="img/en-focus.jpg" width="540" height="1173" alt="A focus at dusk: the tide rises under a setting sun">
+</header>
+<h2>What it does</h2>
+<div class="feats">
+<div class="feat"><h3>A focus timer that makes you move</h3><p>Thirty minutes of focus and a three-minute movement break by default, adjustable from 10 to 50 minutes. The break is a tenth of the time you worked, and it starts on its own so you actually stand up.</p></div>
+<div class="feat"><h3>Blocks distracting apps and websites</h3><p>Pick the apps to block during a focus with Apple&#x27;s Screen Time picker. The websites of the social apps on your phone are blocked too, in Safari and in other browsers.</p></div>
+<div class="feat"><h3>A curfew for your nights</h3><p>Choose two hours, say 11 pm to 7 am, and the apps you picked lock themselves every night, even when Cadence is closed. A countdown on the Mac warns you ten minutes before.</p></div>
+<div class="feat"><h3>Deep work mode</h3><p>When you turn it on, a focus cannot be ended early. The bell decides.</p></div>
+<div class="feat"><h3>iPhone, iPad and Mac, in sync</h3><p>A native Mac app with its menu bar timer, hiding the apps you choose. Your sessions, settings and curfew follow you through iCloud.</p></div>
+<div class="feat"><h3>Siri, widgets, Live Activity</h3><p>Start or end a focus with Siri or the Control Center, and watch the tide in the Dynamic Island.</p></div>
+</div>
+<h2>Mac</h2>
+<div class="mac"><img src="img/mac.jpg" width="1200" height="675" loading="lazy" alt="Cadence on the Mac: the tide in a resizable window"></div>
+<h2>Why stand up every half hour</h2>
+<p>Sitting is not the whole problem; sitting without a break is. Studies on uninterrupted sedentary time (Diaz et al., 2017; Duran et al., 2023) and the WHO 2020 guidelines point the same way: break it up often. Cadence is built around that rhythm.</p>
+<div class="shots">
+<img src="img/en-focus.jpg" width="540" height="1173" loading="lazy" alt="A focus at dusk: the tide rises under a setting sun">
+<img src="img/en-break.jpg" width="540" height="1173" loading="lazy" alt="A movement break at dawn">
+<img src="img/en-stats.jpg" width="540" height="1173" loading="lazy" alt="Statistics: focus time by day and by type">
+</div>
+<h2>Private by design</h2>
+<p>No account, no ads, no tracking. Cadence collects no data: your history stays on your devices and in your own iCloud.</p>
+<h2>Questions</h2>
+<details><summary>How do I block apps at night on iPhone?</summary><p>Turn on the curfew in Cadence, set its hours and choose the apps to block. Every night, at the time you set, iOS locks those apps until the morning, even if Cadence is not open.</p></details>
+<details><summary>Is Cadence a Pomodoro timer?</summary><p>It works like one, with a health twist: thirty minutes of focus, then a short break spent on your feet. The length of the focus is adjustable.</p></details>
+<details><summary>Does it block websites in Chrome, not only Safari?</summary><p>Yes. During a focus, the websites of the social apps installed on your phone are blocked in every browser on iOS, Chrome included.</p></details>
+<details><summary>Is there a subscription?</summary><p>No. Cadence is free to download. Blocking is free for three focus sessions; after that, Cadence Premium is a single one-time purchase that covers your iPhone, iPad and Mac.</p></details>
+<details><summary>Does it work on the Mac?</summary><p>Yes, as a native Mac app from the Mac App Store. It hides the apps you choose during a focus and can cover the whole screen during your curfew.</p></details>
+</main>
+<footer>&copy; 2026 Cadence &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="mailto:arthur.pierrey@gmail.com">Contact</a> &middot; <a href="fr/" hreflang="fr">Français</a></footer>
 </body>
 </html>
