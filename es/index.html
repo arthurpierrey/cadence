@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cadence: temporizador de focus y bloqueador de apps para iPhone y Mac</title>
+<meta name="description" content="Un temporizador de focus con una marea viva estilo estampa japonesa. Bloquea las apps y webs que distraen durante el focus y por la noche, te recuerda levantarte y sincroniza iPhone y Mac. Sin suscripción.">
+<link rel="canonical" href="https://arthurpierrey.github.io/cadence/es/">
+<link rel="alternate" hreflang="en" href="https://arthurpierrey.github.io/cadence/">
+<link rel="alternate" hreflang="fr" href="https://arthurpierrey.github.io/cadence/fr/">
+<link rel="alternate" hreflang="es" href="https://arthurpierrey.github.io/cadence/es/">
+<link rel="alternate" hreflang="de" href="https://arthurpierrey.github.io/cadence/de/">
+<link rel="alternate" hreflang="x-default" href="https://arthurpierrey.github.io/cadence/">
+<meta name="apple-itunes-app" content="app-id=6788449816">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cadence: temporizador de focus y bloqueador de apps para iPhone y Mac">
+<meta property="og:description" content="Un temporizador de focus con una marea viva estilo estampa japonesa. Bloquea las apps y webs que distraen durante el focus y por la noche, te recuerda levantarte y sincroniza iPhone y Mac. Sin suscripción.">
+<meta property="og:url" content="https://arthurpierrey.github.io/cadence/es/">
+<meta property="og:image" content="https://arthurpierrey.github.io/cadence/img/og.jpg">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#122c44">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Cadence", "operatingSystem": "iOS, iPadOS, macOS", "applicationCategory": "ProductivityApplication", "description": "Un temporizador de focus con una marea viva estilo estampa japonesa. Bloquea las apps y webs que distraen durante el focus y por la noche, te recuerda levantarte y sincroniza iPhone y Mac. Sin suscripción.", "url": "https://arthurpierrey.github.io/cadence/es/", "downloadUrl": "https://apps.apple.com/app/id6788449816", "image": "https://arthurpierrey.github.io/cadence/img/og.jpg", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "author": {"@type": "Person", "name": "Arthur Pierrey"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo bloquear apps por la noche en el iPhone?", "acceptedAnswer": {"@type": "Answer", "text": "Activa el toque de queda en Cadence, fija sus horas y elige las apps que bloquear. Cada noche, a la hora indicada, iOS bloquea esas apps hasta la mañana, aunque Cadence no esté abierta."}}, {"@type": "Question", "name": "¿Cadence es un temporizador Pomodoro?", "acceptedAnswer": {"@type": "Answer", "text": "Funciona como uno, con un enfoque de salud: treinta minutos de focus y luego una pausa corta de pie. La duración del focus se puede ajustar."}}, {"@type": "Question", "name": "¿Bloquea webs en Chrome, no solo en Safari?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Durante un focus, las webs de las redes sociales instaladas en tu iPhone se bloquean en todos los navegadores de iOS, Chrome incluido."}}, {"@type": "Question", "name": "¿Hay suscripción?", "acceptedAnswer": {"@type": "Answer", "text": "No. Cadence se descarga gratis. El bloqueo es gratis durante tres focus; después, Cadence Premium es una compra única que vale para tu iPhone, iPad y Mac."}}, {"@type": "Question", "name": "¿Funciona en el Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Sí, como app nativa del Mac App Store. Oculta las apps que elijas durante un focus y puede cubrir toda la pantalla durante el toque de queda."}}]}</script>
+<style>
+:root{--paper:#f7f0e1;--ink:#22333b;--prussian:#122c44;--seal:#c34f41;--muted:#5b6b73;--card:#efe6cf}
+@media (prefers-color-scheme:dark){:root{--paper:#101e30;--ink:#efe6cf;--muted:#a9b3b8;--card:#172a40}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.65}
+main{max-width:980px;margin:0 auto;padding:48px 20px 24px}
+header.hero{display:grid;gap:28px;align-items:center}
+@media(min-width:760px){header.hero{grid-template-columns:1.2fr .8fr}}
+h1{font-size:2.6rem;letter-spacing:.3em;text-transform:uppercase;font-weight:500;margin:0 0 6px}
+.tag{font-size:1.25rem;margin:0 0 16px}
+.lede{font-size:1.05rem}
+.cta{display:inline-block;background:var(--seal);color:#f7f0e1;border-radius:999px;padding:12px 28px;text-decoration:none;font-size:1.05rem;margin:8px 0}
+.free{font-size:.92rem;color:var(--muted)}
+.hero img{width:100%;max-width:300px;height:auto;border-radius:28px;justify-self:center;box-shadow:0 12px 40px rgba(0,0,0,.25)}
+h2{font-weight:500;font-size:1.5rem;margin:56px 0 16px}
+.feats{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.feat{background:var(--card);border-radius:16px;padding:18px 20px}
+.feat h3{margin:0 0 6px;font-size:1.08rem;font-weight:600}
+.feat p{margin:0;font-size:.97rem}
+.shots{display:flex;gap:16px;overflow-x:auto;padding-bottom:8px}
+.shots img{height:420px;width:auto;border-radius:22px;flex:none}
+.mac img{width:100%;height:auto;border-radius:14px}
+details{border-top:1px solid rgba(127,127,127,.3);padding:12px 0}
+summary{cursor:pointer;font-weight:600}
+footer{max-width:980px;margin:0 auto;padding:32px 20px 56px;font-size:.88rem;color:var(--muted)}
+footer a{color:inherit}
+</style>
+</head>
+<body>
+<main>
+<header class="hero">
+<div>
+<h1>Cadence</h1>
+<p class="tag">Temporizador de focus y bloqueador de apps para iPhone, iPad y Mac.</p>
+<p class="lede">Treinta minutos de trabajo profundo y luego tres de pie. El mar sube mientras te concentras y baja mientras te mueves, bajo un cielo de estampa vivo que sigue tu día real y el tiempo local.</p>
+<a class="cta" href="https://apps.apple.com/app/id6788449816">Descargar en el App Store</a>
+<p class="free">Descarga gratuita. El bloqueo es gratis durante tres focus; después, una sola compra lo desbloquea para siempre en todos tus dispositivos. Sin suscripción.</p>
+</div>
+<img src="../img/es-focus.jpg" width="540" height="1173" alt="Un focus al atardecer: la marea sube bajo el sol poniente">
+</header>
+<h2>Qué hace</h2>
+<div class="feats">
+<div class="feat"><h3>Un temporizador de focus que te hace moverte</h3><p>Treinta minutos de focus y tres de pausa activa por defecto, ajustable de 10 a 50 minutos. La pausa dura una décima parte del tiempo trabajado y empieza sola, para que te levantes de verdad.</p></div>
+<div class="feat"><h3>Bloquea las apps y webs que distraen</h3><p>Elige las apps que bloquear durante un focus con el selector de Tiempo de uso de Apple. Las webs de las redes sociales de tu iPhone también se bloquean, en Safari y en otros navegadores.</p></div>
+<div class="feat"><h3>Un toque de queda para tus noches</h3><p>Elige dos horas, por ejemplo las 23:00 y las 7:00, y las apps elegidas se bloquean cada noche, aunque Cadence esté cerrada. En el Mac, una cuenta atrás te avisa diez minutos antes.</p></div>
+<div class="feat"><h3>Modo trabajo profundo</h3><p>Cuando lo activas, un focus no se puede terminar antes de tiempo. Decide la campana.</p></div>
+<div class="feat"><h3>iPhone, iPad y Mac, sincronizados</h3><p>Una app nativa para Mac con su temporizador en la barra de menús, que oculta las apps que elijas. Tus sesiones, ajustes y toque de queda te siguen con iCloud.</p></div>
+<div class="feat"><h3>Siri, widgets, Live Activity</h3><p>Empieza o termina un focus con Siri o desde el Centro de control, y sigue la marea en la Dynamic Island.</p></div>
+</div>
+<h2>Mac</h2>
+<div class="mac"><img src="../img/mac.jpg" width="1200" height="675" loading="lazy" alt="Cadence en el Mac: la marea en una ventana redimensionable"></div>
+<h2>Por qué levantarse cada media hora</h2>
+<p>Estar sentado no es todo el problema; estarlo sin pausa, sí. Los estudios sobre el tiempo sedentario ininterrumpido (Diaz et al., 2017; Duran et al., 2023) y las recomendaciones de la OMS de 2020 apuntan en la misma dirección: interrumpirlo a menudo. Cadence está construido alrededor de ese ritmo.</p>
+<div class="shots">
+<img src="../img/es-focus.jpg" width="540" height="1173" loading="lazy" alt="Un focus al atardecer: la marea sube bajo el sol poniente">
+<img src="../img/es-break.jpg" width="540" height="1173" loading="lazy" alt="Una pausa activa al amanecer">
+<img src="../img/es-stats.jpg" width="540" height="1173" loading="lazy" alt="Estadísticas: tiempo de focus por día y por tipo">
+</div>
+<h2>Privado por diseño</h2>
+<p>Sin cuenta, sin anuncios, sin rastreo. Cadence no recoge ningún dato: tu historial se queda en tus dispositivos y en tu propio iCloud.</p>
+<h2>Preguntas</h2>
+<details><summary>¿Cómo bloquear apps por la noche en el iPhone?</summary><p>Activa el toque de queda en Cadence, fija sus horas y elige las apps que bloquear. Cada noche, a la hora indicada, iOS bloquea esas apps hasta la mañana, aunque Cadence no esté abierta.</p></details>
+<details><summary>¿Cadence es un temporizador Pomodoro?</summary><p>Funciona como uno, con un enfoque de salud: treinta minutos de focus y luego una pausa corta de pie. La duración del focus se puede ajustar.</p></details>
+<details><summary>¿Bloquea webs en Chrome, no solo en Safari?</summary><p>Sí. Durante un focus, las webs de las redes sociales instaladas en tu iPhone se bloquean en todos los navegadores de iOS, Chrome incluido.</p></details>
+<details><summary>¿Hay suscripción?</summary><p>No. Cadence se descarga gratis. El bloqueo es gratis durante tres focus; después, Cadence Premium es una compra única que vale para tu iPhone, iPad y Mac.</p></details>
+<details><summary>¿Funciona en el Mac?</summary><p>Sí, como app nativa del Mac App Store. Oculta las apps que elijas durante un focus y puede cubrir toda la pantalla durante el toque de queda.</p></details>
+</main>
+<footer>&copy; 2026 Cadence &middot; <a href="../privacy.html">Privacidad</a> &middot; <a href="mailto:arthur.pierrey@gmail.com">Contacto</a> &middot; <a href="../" hreflang="en">English</a> &middot; <a href="../fr/" hreflang="fr">Français</a> &middot; <a href="../de/" hreflang="de">Deutsch</a></footer>
+</body>
+</html>

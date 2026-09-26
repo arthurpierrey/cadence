@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Builds index.html (English) and fr/index.html (French) from one template,
-plus sitemap.xml. Run from the repository root: python3 build.py"""
+"""Builds the landing page in English (index.html), French, Spanish and German
+(fr/, es/, de/) from one template, plus sitemap.xml. Run from the repository root: python3 build.py"""
 import json, os, html
 
 BASE = "https://arthurpierrey.github.io/cadence/"
@@ -38,7 +38,7 @@ T = {
    ("Is there a subscription?", "No. Cadence is free to download. Blocking is free for three focus sessions; after that, Cadence Premium is a single one-time purchase that covers your iPhone, iPad and Mac."),
    ("Does it work on the Mac?", "Yes, as a native Mac app from the Mac App Store. It hides the apps you choose during a focus and can cover the whole screen during your curfew."),
   ],
-  lang_link=("Français", "fr/"), privacy="Privacy Policy", contact="Contact",
+  privacy="Privacy Policy", contact="Contact",
  ),
  "fr": dict(
   path="fr/", lang="fr",
@@ -70,7 +70,71 @@ T = {
    ("Y a-t-il un abonnement ?", "Non. Cadence est gratuit au téléchargement. Le blocage est gratuit pendant trois focus ; ensuite Cadence Premium est un achat unique qui vaut pour l'iPhone, l'iPad et le Mac."),
    ("Cadence marche-t-il sur Mac ?", "Oui, en app Mac native sur le Mac App Store. Elle masque les apps choisies pendant un focus et peut couvrir tout l'écran pendant le couvre-feu."),
   ],
-  lang_link=("English", "../"), privacy="Confidentialité", contact="Contact",
+  privacy="Confidentialité", contact="Contact",
+ ),
+ "es": dict(
+  path="es/", lang="es",
+  title="Cadence: temporizador de focus y bloqueador de apps para iPhone y Mac",
+  desc="Un temporizador de focus con una marea viva estilo estampa japonesa. Bloquea las apps y webs que distraen durante el focus y por la noche, te recuerda levantarte y sincroniza iPhone y Mac. Sin suscripción.",
+  h1="Cadence", tag="Temporizador de focus y bloqueador de apps para iPhone, iPad y Mac.",
+  lede="Treinta minutos de trabajo profundo y luego tres de pie. El mar sube mientras te concentras y baja mientras te mueves, bajo un cielo de estampa vivo que sigue tu día real y el tiempo local.",
+  cta="Descargar en el App Store", free="Descarga gratuita. El bloqueo es gratis durante tres focus; después, una sola compra lo desbloquea para siempre en todos tus dispositivos. Sin suscripción.",
+  feats_h="Qué hace",
+  feats=[
+   ("Un temporizador de focus que te hace moverte", "Treinta minutos de focus y tres de pausa activa por defecto, ajustable de 10 a 50 minutos. La pausa dura una décima parte del tiempo trabajado y empieza sola, para que te levantes de verdad."),
+   ("Bloquea las apps y webs que distraen", "Elige las apps que bloquear durante un focus con el selector de Tiempo de uso de Apple. Las webs de las redes sociales de tu iPhone también se bloquean, en Safari y en otros navegadores."),
+   ("Un toque de queda para tus noches", "Elige dos horas, por ejemplo las 23:00 y las 7:00, y las apps elegidas se bloquean cada noche, aunque Cadence esté cerrada. En el Mac, una cuenta atrás te avisa diez minutos antes."),
+   ("Modo trabajo profundo", "Cuando lo activas, un focus no se puede terminar antes de tiempo. Decide la campana."),
+   ("iPhone, iPad y Mac, sincronizados", "Una app nativa para Mac con su temporizador en la barra de menús, que oculta las apps que elijas. Tus sesiones, ajustes y toque de queda te siguen con iCloud."),
+   ("Siri, widgets, Live Activity", "Empieza o termina un focus con Siri o desde el Centro de control, y sigue la marea en la Dynamic Island."),
+  ],
+  why_h="Por qué levantarse cada media hora",
+  why="Estar sentado no es todo el problema; estarlo sin pausa, sí. Los estudios sobre el tiempo sedentario ininterrumpido (Diaz et al., 2017; Duran et al., 2023) y las recomendaciones de la OMS de 2020 apuntan en la misma dirección: interrumpirlo a menudo. Cadence está construido alrededor de ese ritmo.",
+  shots_alt=("Un focus al atardecer: la marea sube bajo el sol poniente", "Una pausa activa al amanecer", "Estadísticas: tiempo de focus por día y por tipo"),
+  mac_alt="Cadence en el Mac: la marea en una ventana redimensionable",
+  priv_h="Privado por diseño",
+  priv="Sin cuenta, sin anuncios, sin rastreo. Cadence no recoge ningún dato: tu historial se queda en tus dispositivos y en tu propio iCloud.",
+  faq_h="Preguntas",
+  faq=[
+   ("¿Cómo bloquear apps por la noche en el iPhone?", "Activa el toque de queda en Cadence, fija sus horas y elige las apps que bloquear. Cada noche, a la hora indicada, iOS bloquea esas apps hasta la mañana, aunque Cadence no esté abierta."),
+   ("¿Cadence es un temporizador Pomodoro?", "Funciona como uno, con un enfoque de salud: treinta minutos de focus y luego una pausa corta de pie. La duración del focus se puede ajustar."),
+   ("¿Bloquea webs en Chrome, no solo en Safari?", "Sí. Durante un focus, las webs de las redes sociales instaladas en tu iPhone se bloquean en todos los navegadores de iOS, Chrome incluido."),
+   ("¿Hay suscripción?", "No. Cadence se descarga gratis. El bloqueo es gratis durante tres focus; después, Cadence Premium es una compra única que vale para tu iPhone, iPad y Mac."),
+   ("¿Funciona en el Mac?", "Sí, como app nativa del Mac App Store. Oculta las apps que elijas durante un focus y puede cubrir toda la pantalla durante el toque de queda."),
+  ],
+  privacy="Privacidad", contact="Contacto",
+ ),
+ "de": dict(
+  path="de/", lang="de",
+  title="Cadence: Focus-Timer und App-Blocker für iPhone und Mac",
+  desc="Ein Focus-Timer mit einer lebendigen Flut im Holzschnitt-Stil. Sperrt ablenkende Apps und Websites während des Focus und nachts, erinnert dich ans Aufstehen und synchronisiert iPhone und Mac. Kein Abo.",
+  h1="Cadence", tag="Focus-Timer und App-Blocker für iPhone, iPad und Mac.",
+  lede="Dreißig Minuten Deep Work, dann drei Minuten auf den Beinen. Das Meer steigt, während du dich konzentrierst, und sinkt, während du dich bewegst, unter einem lebendigen Holzschnitt-Himmel, der deinem echten Tag und deinem lokalen Wetter folgt.",
+  cta="Im App Store laden", free="Kostenloser Download. Das Sperren ist für drei Focus-Sitzungen kostenlos, danach schaltet ein einziger Kauf es auf all deinen Geräten dauerhaft frei. Kein Abo.",
+  feats_h="Was Cadence kann",
+  feats=[
+   ("Ein Focus-Timer, der dich bewegt", "Standardmäßig dreißig Minuten Focus und drei Minuten Bewegungspause, einstellbar von 10 bis 50 Minuten. Die Pause dauert ein Zehntel der Arbeitszeit und beginnt von selbst, damit du wirklich aufstehst."),
+   ("Sperrt ablenkende Apps und Websites", "Wähle mit Apples Bildschirmzeit die Apps, die während eines Focus gesperrt werden. Die Websites der sozialen Netzwerke auf deinem iPhone werden ebenfalls gesperrt, in Safari und in anderen Browsern."),
+   ("Eine Nachtsperre für deine Nächte", "Wähle zwei Uhrzeiten, etwa 23 und 7 Uhr, und die gewählten Apps sperren sich jede Nacht, auch wenn Cadence geschlossen ist. Auf dem Mac warnt dich ein Countdown zehn Minuten vorher."),
+   ("Deep-Work-Modus", "Ist er aktiv, lässt sich ein Focus nicht vorzeitig beenden. Die Glocke entscheidet."),
+   ("iPhone, iPad und Mac, synchron", "Eine native Mac-App mit Timer in der Menüleiste, die die gewählten Apps ausblendet. Sitzungen, Einstellungen und Nachtsperre folgen dir über iCloud."),
+   ("Siri, Widgets, Live-Aktivität", "Starte oder beende einen Focus mit Siri oder im Kontrollzentrum und verfolge die Flut in der Dynamic Island."),
+  ],
+  why_h="Warum jede halbe Stunde aufstehen",
+  why="Sitzen ist nicht das ganze Problem; ununterbrochenes Sitzen schon. Studien zu ununterbrochener Sitzzeit (Diaz et al., 2017; Duran et al., 2023) und die WHO-Leitlinien von 2020 zeigen in dieselbe Richtung: sie oft unterbrechen. Cadence ist um diesen Rhythmus herum gebaut.",
+  shots_alt=("Ein Focus in der Abenddämmerung: die Flut steigt unter der untergehenden Sonne", "Eine Bewegungspause im Morgengrauen", "Statistiken: Focus-Zeit pro Tag und pro Typ"),
+  mac_alt="Cadence auf dem Mac: die Flut in einem frei skalierbaren Fenster",
+  priv_h="Privat von Grund auf",
+  priv="Kein Konto, keine Werbung, kein Tracking. Cadence sammelt keine Daten: Dein Verlauf bleibt auf deinen Geräten und in deiner eigenen iCloud.",
+  faq_h="Fragen",
+  faq=[
+   ("Wie sperre ich Apps nachts auf dem iPhone?", "Aktiviere die Nachtsperre in Cadence, lege die Uhrzeiten fest und wähle die Apps. Jede Nacht sperrt iOS diese Apps zur gewählten Zeit bis zum Morgen, auch wenn Cadence nicht geöffnet ist."),
+   ("Ist Cadence ein Pomodoro-Timer?", "Es funktioniert wie einer, mit Blick auf die Gesundheit: dreißig Minuten Focus, dann eine kurze Pause im Stehen. Die Focus-Dauer ist einstellbar."),
+   ("Werden Websites auch in Chrome gesperrt, nicht nur in Safari?", "Ja. Während eines Focus werden die Websites der sozialen Netzwerke auf deinem iPhone in allen iOS-Browsern gesperrt, auch in Chrome."),
+   ("Gibt es ein Abo?", "Nein. Cadence ist kostenlos. Das Sperren ist für drei Focus-Sitzungen gratis; danach ist Cadence Premium ein einmaliger Kauf für iPhone, iPad und Mac."),
+   ("Läuft Cadence auf dem Mac?", "Ja, als native App aus dem Mac App Store. Sie blendet die gewählten Apps während eines Focus aus und kann während der Nachtsperre den ganzen Bildschirm abdecken."),
+  ],
+  privacy="Datenschutz", contact="Kontakt",
  ),
 }
 
@@ -104,8 +168,12 @@ footer a{color:inherit}
 
 def page(k):
     t = T[k]; e = html.escape
-    here = BASE + t["path"]; other = {"en": BASE, "fr": BASE + "fr/"}
+    here = BASE + t["path"]
+    NAMES = {"en": "English", "fr": "Français", "es": "Español", "de": "Deutsch"}
     root = "" if k == "en" else "../"
+    # Screenshots exist in English and French for now; the other languages
+    # show the English ones until theirs are captured.
+    shot = k if os.path.exists(f"img/{k}-focus.jpg") else "en"
     ld_app = {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Cadence",
               "operatingSystem": "iOS, iPadOS, macOS", "applicationCategory": "ProductivityApplication",
               "description": t["desc"], "url": here, "downloadUrl": STORE, "image": BASE + "img/og.jpg",
@@ -114,8 +182,10 @@ def page(k):
     ld_faq = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in t["faq"]]}
     feats = "\n".join(f'<div class="feat"><h3>{e(h)}</h3><p>{e(p)}</p></div>' for h, p in t["feats"])
-    shots = "\n".join(f'<img src="{root}img/{k}-{n}.jpg" width="540" height="1173" loading="lazy" alt="{e(a)}">'
+    shots = "\n".join(f'<img src="{root}img/{shot}-{n}.jpg" width="540" height="1173" loading="lazy" alt="{e(a)}">'
                       for n, a in zip(("focus", "break", "stats"), t["shots_alt"]))
+    alternates = "\n".join(f'<link rel="alternate" hreflang="{c}" href="{BASE + T[c]["path"]}">' for c in T)
+    langs = " &middot; ".join(f'<a href="{root}{T[c]["path"]}" hreflang="{c}">{NAMES[c]}</a>' for c in T if c != k)
     faq = "\n".join(f"<details><summary>{e(q)}</summary><p>{e(a)}</p></details>" for q, a in t["faq"])
     return f"""<!DOCTYPE html>
 <html lang="{t['lang']}">
@@ -125,16 +195,15 @@ def page(k):
 <title>{e(t['title'])}</title>
 <meta name="description" content="{e(t['desc'])}">
 <link rel="canonical" href="{here}">
-<link rel="alternate" hreflang="en" href="{other['en']}">
-<link rel="alternate" hreflang="fr" href="{other['fr']}">
-<link rel="alternate" hreflang="x-default" href="{other['en']}">
+{alternates}
+<link rel="alternate" hreflang="x-default" href="{BASE}">
 <meta name="apple-itunes-app" content="app-id=6788449816">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{e(t['title'])}">
 <meta property="og:description" content="{e(t['desc'])}">
 <meta property="og:url" content="{here}">
 <meta property="og:image" content="{BASE}img/og.jpg">
-<meta property="og:locale" content="{'en_US' if k == 'en' else 'fr_FR'}">
+<meta property="og:locale" content="{ {'en': 'en_US', 'fr': 'fr_FR', 'es': 'es_ES', 'de': 'de_DE'}[k] }">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#122c44">
 <script type="application/ld+json">{json.dumps(ld_app, ensure_ascii=False)}</script>
@@ -151,7 +220,7 @@ def page(k):
 <a class="cta" href="{STORE}">{e(t['cta'])}</a>
 <p class="free">{e(t['free'])}</p>
 </div>
-<img src="{root}img/{k}-focus.jpg" width="540" height="1173" alt="{e(t['shots_alt'][0])}">
+<img src="{root}img/{shot}-focus.jpg" width="540" height="1173" alt="{e(t['shots_alt'][0])}">
 </header>
 <h2>{e(t['feats_h'])}</h2>
 <div class="feats">
@@ -169,18 +238,20 @@ def page(k):
 <h2>{e(t['faq_h'])}</h2>
 {faq}
 </main>
-<footer>&copy; 2026 Cadence &middot; <a href="{root}privacy.html">{e(t['privacy'])}</a> &middot; <a href="mailto:{MAIL}">{e(t['contact'])}</a> &middot; <a href="{t['lang_link'][1]}" hreflang="{'fr' if k == 'en' else 'en'}">{e(t['lang_link'][0])}</a></footer>
+<footer>&copy; 2026 Cadence &middot; <a href="{root}privacy.html">{e(t['privacy'])}</a> &middot; <a href="mailto:{MAIL}">{e(t['contact'])}</a> &middot; {langs}</footer>
 </body>
 </html>
 """
 
-os.makedirs("fr", exist_ok=True)
-open("index.html", "w").write(page("en"))
-open("fr/index.html", "w").write(page("fr"))
+for k in T:
+    if T[k]["path"]:
+        os.makedirs(T[k]["path"], exist_ok=True)
+    open(T[k]["path"] + "index.html", "w").write(page(k))
+alts = "".join(f'<xhtml:link rel="alternate" hreflang="{c}" href="{BASE + T[c]["path"]}"/>' for c in T)
+urls = "\n".join(f"<url><loc>{BASE + T[k]['path']}</loc>{alts}</url>" for k in T)
 open("sitemap.xml", "w").write(f"""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-<url><loc>{BASE}</loc><xhtml:link rel="alternate" hreflang="fr" href="{BASE}fr/"/><xhtml:link rel="alternate" hreflang="en" href="{BASE}"/></url>
-<url><loc>{BASE}fr/</loc><xhtml:link rel="alternate" hreflang="fr" href="{BASE}fr/"/><xhtml:link rel="alternate" hreflang="en" href="{BASE}"/></url>
+{urls}
 <url><loc>{BASE}privacy.html</loc></url>
 </urlset>
 """)
